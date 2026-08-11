@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klinik Casamedik - Heal With Us</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==================== GLOBAL STYLES & VARIABLES ==================== */
+    :root {
+      --primary-purple: #4a154b;
+      --primary-purple-dark: #320c33;
+      --accent-purple: #6b21a8;
+      --light-purple: #f5f0fb;
+      --soft-pink: #fdf2f8;
+      --pink-border: #fbcfe8;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --text-purple: #581c87;
+      --white: #ffffff;
+      --green-whatsapp: #25d366;
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      color: var(--text-dark);
+      background-color: #fcfbfe;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .script-font {
+      font-family: 'Sacramento', cursive;
+      color: var(--accent-purple);
+      font-size: 2rem;
+    }
+
+    /* ==================== NAVBAR ==================== */
+    .navbar {
+      background: var(--white);
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #ef4444;
+      color: #ef4444;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .logo-text h2 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary-purple);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    .logo-text p {
+      font-size: 0.65rem;
+      color: #ef4444;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      transition: color 0.2s;
+    }
+
+    .nav-links a.active, .nav-links a:hover {
+      color: var(--accent-purple);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .search-btn {
+      background: #f1f5f9;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: var(--primary-purple);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-purple-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp-icon {
+      background: var(--green-whatsapp);
+      color: var(--white);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    /* ==================== HERO SECTION ==================== */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #fdf4ff 0%, #f5f0fb 100%);
+      padding: 50px 0 80px;
+      overflow: hidden;
+    }
+
+    .hero-bg-curve {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      line-height: 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .location-badge {
+      display: inline-block;
+      background: #e9d5ff;
+      color: var(--primary-purple);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--primary-purple);
+      line-height: 1.15;
+      margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+
+    .feature-pills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .pill-item {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      padding: 8px 12px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pill-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #f3e8ff;
+      color: var(--accent-purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .pill-text {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.2;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--primary-purple);
+      border: 1px solid #e9d5ff;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-image-container {
+      position: relative;
+      text-align: center;
+    }
+
+    .doctor-img-wrapper {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+    }
+
+    .doctor-img {
+      max-width: 100%;
+      height: auto;
+      max-height: 420px;
+      filter: drop-shadow(0 15px 15px rgba(0,0,0,0.1));
+    }
+
+    .doctor-card-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px;
+      height: 350px;
+      background: linear-gradient(135deg, #e9d5ff 0%, #fae8ff 100%);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .quote-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      z-index: 3;
+      text-align: left;
+    }
+
+    .quote-badge p {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--primary-purple);
+    }
+
+    /* ==================== SERVICES SECTION ==================== */
+    .services {
+      padding: 40px 0 60px;
+      text-align: center;
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary-purple);
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 5px;
+    }
+
+    .services-header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 15px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #f1f5f9;
+      text-align: left;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .service-icon {
+      width: 36px;
+      height: 36px;
+      background: #f3e8ff;
+      color: var(--accent-purple);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .service-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .service-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 15px;
+    }
+
+    .service-img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* ==================== PROMO BANNER ==================== */
+    .promo-banner {
+      background: linear-gradient(90deg, #3b0764 0%, #6b21a8 50%, #7e22ce 100%);
+      border-radius: var(--radius-lg);
+      padding: 20px 30px;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 40px 0 60px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .promo-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .promo-shield-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--white);
+    }
+
+    .promo-text h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .promo-text p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    .promo-features {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 0.75rem;
+    }
+
+    .promo-features div {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-promo {
+      background: var(--primary-purple-dark);
+      color: var(--white);
+      padding: 10px 24px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.8rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+    }
+
+    /* ==================== DOCTORS & CLINIC ==================== */
+    .doctor-section {
+      padding: 20px 0 60px;
+    }
+
+    .doctor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 0.7fr;
+      gap: 25px;
+    }
+
+    .doctor-profile-card {
+      background: #fcf5ff;
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      display: flex;
+      gap: 15px;
+      border: 1px solid #f3e8ff;
+    }
+
+    .doc-avatar {
+      width: 110px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .doc-info h3 {
+      font-size: 1.05rem;
+      color: var(--primary-purple);
+      font-weight: 800;
+    }
+
+    .doc-role {
+      font-size: 0.75rem;
+      color: var(--accent-purple);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .doc-credentials {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      list-style: none;
+      line-height: 1.4;
+    }
+
+    .doc-quote {
+      font-size: 0.65rem;
+      font-style: italic;
+      color: var(--primary-purple);
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    /* Clinic Gallery Right */
+    .clinic-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .gallery-main {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+    }
+
+    .gallery-thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .gallery-thumbs img {
+      width: 100%;
+      height: 45px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    /* Rating Box */
+    .rating-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #f1f5f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .rating-score {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rating-score i {
+      color: #f59e0b;
+      font-size: 1.8rem;
+    }
+
+    .rating-subtitle {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 15px;
+    }
+
+    .rating-features {
+      width: 100%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary-purple);
+    }
+
+    .rating-features div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #fdf4ff;
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+
+    /* ==================== INFO GRID (LOCATION, HOURS, ASSISTANCE) ==================== */
+    .info-section {
+      padding: 20px 0 60px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 0.8fr;
+      gap: 20px;
+    }
+
+    .info-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #f1f5f9;
+    }
+
+    .info-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .info-header i {
+      color: var(--accent-purple);
+      font-size: 1.1rem;
+    }
+
+    .info-header h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-purple);
+    }
+
+    .address-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 90px;
+      background: #e2e8f0;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-bottom: 12px;
+    }
+
+    .btn-directions {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #e2e8f0;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .hours-list {
+      list-style: none;
+      font-size: 0.72rem;
+    }
+
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      border-bottom: 1px dashed #f1f5f9;
+    }
+
+    .hours-list li span:first-child {
+      color: var(--text-muted);
+    }
+
+    .hours-list li span:last-child {
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    /* WhatsApp Card */
+    .wa-card {
+      background: #059669;
+      color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .wa-content h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .wa-content p {
+      font-size: 0.75rem;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+
+    .wa-number {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .btn-wa-action {
+      background: #facc15;
+      color: var(--text-dark);
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    /* ==================== REVIEWS SECTION ==================== */
+    .reviews-section {
+      padding: 20px 0 60px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr) 1.2fr;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .review-card {
+      background: #fdf4ff;
+      border-radius: var(--radius-md);
+      padding: 15px;
+      border: 1px solid #fae8ff;
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 0.7rem;
+      margin-bottom: 8px;
+    }
+
+    .review-text {
+      font-size: 0.7rem;
+      color: var(--text-dark);
+      font-style: italic;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .reviewer {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .banner-family-img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+    }
+
+    /* ==================== FOOTER ==================== */
+    footer {
+      background: var(--primary-purple-dark);
+      color: var(--white);
+      padding: 40px 0 20px;
+      font-size: 0.75rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-logo h3 {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .footer-logo p {
+      font-size: 0.65rem;
+      color: #f87171;
+    }
+
+    .footer-col h5 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #e9d5ff;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-col a {
+      color: #d8b4fe;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #a855f7;
+      font-size: 0.7rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-links a {
+      color: var(--white);
+      font-size: 0.9rem;
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 992px) {
+      .hero-grid, .services-grid, .doctor-grid, .info-grid, .reviews-grid, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-title {
+        font-size: 2rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .services-header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="logo-text">
+          <h2>KLINIK CASAMEDIK</h2>
+          <p>"HEAL WITH US"</p>
+        </div>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Our Doctors</a></li>
+        <li><a href="#">Promotions</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Appointment</button>
+        <div class="btn-whatsapp-icon"><i class="fa-brands fa-whatsapp"></i></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="location-badge">Your Trusted Family Clinic in Cybersouth, Dengkil</span>
+          <h1 class="hero-title">Comprehensive Healthcare for <br><span style="color: var(--accent-purple);">You & Your Family</span></h1>
+          <p class="hero-subtitle">Compassionate care. Professional service.</p>
+
+          <div class="feature-pills">
+            <div class="pill-item">
+              <div class="pill-icon"><i class="fa-solid fa-user-doctor"></i></div>
+              <div class="pill-text">Experienced<br>Doctors</div>
+            </div>
+            <div class="pill-item">
+              <div class="pill-icon"><i class="fa-solid fa-children"></i></div>
+              <div class="pill-text">Family-Friendly<br>Clinic</div>
+            </div>
+            <div class="pill-item">
+              <div class="pill-icon"><i class="fa-solid fa-couch"></i></div>
+              <div class="pill-text">Modern &<br>Comfortable</div>
+            </div>
+            <div class="pill-item">
+              <div class="pill-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="pill-text">Convenient<br>Location</div>
+            </div>
+          </div>
+
+          <div class="hero-cta-group">
+            <button class="btn-primary">Book Appointment <i class="fa-solid fa-arrow-right"></i></button>
+            <button class="btn-outline"><i class="fa-regular fa-comment-dots"></i> Chat with Us</button>
+          </div>
+        </div>
+
+        <div class="hero-image-container">
+          <div class="doctor-card-bg"></div>
+          <div class="doctor-img-wrapper">
+            <!-- Dokter Dummy SVG Visual Placeholder -->
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop" alt="Doctor" class="doctor-img" style="border-radius: 20px;">
+          </div>
+          <div class="quote-badge">
+            <p>"Your health, <br>our priority."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES SECTION ==================== -->
+  <section class="services container">
+    <div class="services-header-flex">
+      <div>
+        <span class="script-font">Our Services</span>
+        <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--primary-purple);">Complete <span style="color: var(--accent-purple);">Healthcare</span> Under One Roof</h2>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Quality care for every stage of life.</p>
+      </div>
+      <button class="btn-outline">View All Services <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="service-card">
+        <div>
+          <div class="service-icon"><i class="fa-solid fa-stethoscope"></i></div>
+          <div class="service-title">General Consultation</div>
+          <div class="service-desc">For fever, flu, cough, injury & more</div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=300&auto=format&fit=crop" alt="Stethoscope" class="service-img">
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card">
+        <div>
+          <div class="service-icon"><i class="fa-solid fa-baby"></i></div>
+          <div class="service-title">Child & Family Health</div>
+          <div class="service-desc">Gentle care for your little ones</div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=300&auto=format&fit=crop" alt="Child Health" class="service-img">
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-card">
+        <div>
+          <div class="service-icon"><i class="fa-solid fa-syringe"></i></div>
+          <div class="service-title">Vaccination</div>
+          <div class="service-desc">Influenza, Typhoid & more</div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1618961734760-466979ce35b0?q=80&w=300&auto=format&fit=crop" alt="Vaccination" class="service-img">
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-card">
+        <div>
+          <div class="service-icon"><i class="fa-solid fa-file-medical"></i></div>
+          <div class="service-title">Health Screening</div>
+          <div class="service-desc">Early detection for a healthier you</div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=300&auto=format&fit=crop" alt="Health Screening" class="service-img">
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-card">
+        <div>
+          <div class="service-icon"><i class="fa-solid fa-weight-scale"></i></div>
+          <div class="service-title">Weight Management</div>
+          <div class="service-desc">Personalised medical weight loss programme</div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=300&auto=format&fit=crop" alt="Weight Management" class="service-img">
+      </div>
+
+      <!-- Service 6 -->
+      <div class="service-card">
+        <div>
+          <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
+          <div class="service-title">Minor Procedures</div>
+          <div class="service-desc">Wound care, injection, nebuliser & more</div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=300&auto=format&fit=crop" alt="Minor Procedures" class="service-img">
+      </div>
+
+      <!-- Service 7 -->
+      <div class="service-card">
+        <div>
+          <div class="service-icon"><i class="fa-solid fa-person-breastfeeding"></i></div>
+          <div class="service-title">Women's Health</div>
+          <div class="service-desc">Care for every stage of life</div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?q=80&w=300&auto=format&fit=crop" alt="Women Health" class="service-img">
+      </div>
+
+      <!-- Service 8 -->
+      <div class="service-card">
+        <div>
+          <div class="service-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div class="service-title">Chronic Disease Management</div>
+          <div class="service-desc">Diabetes, Hypertension, Asthma & more</div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=300&auto=format&fit=crop" alt="Chronic Disease" class="service-img">
+      </div>
+    </div>
+
+    <!-- Banner Influenza -->
+    <div class="promo-banner">
+      <div class="promo-left">
+        <div class="promo-shield-icon"><i class="fa-solid fa-shield-virus"></i></div>
+        <div class="promo-text" style="text-align: left;">
+          <h3>Stay Protected This Season</h3>
+          <p>Get your <strong>Influenza Vaccine</strong> today!</p>
+        </div>
+      </div>
+
+      <div class="promo-features">
+        <div><i class="fa-solid fa-circle-check"></i> For adults, children & elderly</div>
+        <div><i class="fa-solid fa-circle-check"></i> Safe & effective</div>
+        <div><i class="fa-solid fa-circle-check"></i> Walk-in welcome</div>
+      </div>
+
+      <button class="btn-promo">Learn More</button>
+    </div>
+  </section>
+
+  <!-- ==================== DOCTORS & CLINIC GALLERY ==================== -->
+  <section class="doctor-section container">
+    <div class="section-header" style="text-align: center;">
+      <h2 style="font-size: 1.8rem;">Meet <span style="color: var(--accent-purple);">Our Doctors</span></h2>
+      <p>Experienced & caring medical team</p>
+    </div>
+
+    <div class="doctor-grid">
+      <!-- Doctor Profile -->
+      <div class="doctor-profile-card">
+        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=200&auto=format&fit=crop" alt="Dr Mohd Khir" class="doc-avatar">
+        <div class="doc-info">
+          <h3>Dr Mohd Khir Bin Abdul Shukor</h3>
+          <div class="doc-role">Resident Doctor</div>
+          <ul class="doc-credentials">
+            <li>• MD UPM (2010)</li>
+            <li>• Hospital Sultan Ismail (2010–2012)</li>
+            <li>• Hospital Segamat (2012–2015)</li>
+            <li>• Hospital Kajang (2015–2017)</li>
+            <li>• Nilai Medical Centre (2017)</li>
+            <li>• Columbia Asia Bukit Rimau (2017–2023)</li>
+            <li>• Klinik Casamedik (2023–now)</li>
+          </ul>
+          <div class="doc-quote">"Providing the best care for you and your family."</div>
+        </div>
+      </div>
+
+      <!-- Clinic Gallery -->
+      <div class="clinic-gallery">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500&auto=format&fit=crop" alt="Clinic Front" class="gallery-main">
+        <div class="gallery-thumbs">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=150&auto=format&fit=crop" alt="Facility 1">
+          <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=150&auto=format&fit=crop" alt="Facility 2">
+          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=150&auto=format&fit=crop" alt="Facility 3">
+          <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=150&auto=format&fit=crop" alt="Facility 4">
+        </div>
+      </div>
+
+      <!-- Google Review Badge -->
+      <div class="rating-card">
+        <div class="rating-score">
+          <i class="fa-solid fa-star"></i> 4.9/5
+        </div>
+        <div style="font-size: 0.75rem; font-weight: 800; color: var(--primary-purple);">Google Reviews</div>
+        <div class="rating-subtitle">Trusted by over 1,000 families</div>
+
+        <div class="rating-features">
+          <div><i class="fa-solid fa-sparkles"></i> Clean & Comfortable</div>
+          <div><i class="fa-solid fa-square-parking"></i> Ample Parking</div>
+          <div><i class="fa-solid fa-child-reaching"></i> Family-Friendly</div>
+          <div><i class="fa-solid fa-hospital"></i> Modern Facilities</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LOCATION & HOURS ==================== -->
+  <section class="info-section container">
+    <div class="info-grid">
+      <!-- Location -->
+      <div class="info-card">
+        <div class="info-header">
+          <i class="fa-solid fa-location-dot"></i>
+          <h4>Clinic Location</h4>
+        </div>
+        <p class="address-text">
+          Park Place 1, 6-G, Jalan PP1/1, Cybersouth, 43800 Dengkil, Selangor
+        </p>
+        <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=400&auto=format&fit=crop" alt="Map View" class="map-placeholder">
+        <a href="#" class="btn-directions">Get Directions <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <!-- Hours -->
+      <div class="info-card">
+        <div class="info-header">
+          <i class="fa-regular fa-clock"></i>
+          <h4>Operating Hours</h4>
+        </div>
+        <ul class="hours-list">
+          <li><span>Monday</span><span>8:30 AM – 10:30 PM</span></li>
+          <li><span>Tuesday</span><span>8:30 AM – 10:30 PM</span></li>
+          <li><span>Wednesday</span><span>8:30 AM – 10:30 PM</span></li>
+          <li><span>Thursday</span><span>8:30 AM – 10:30 PM</span></li>
+          <li><span>Friday</span><span>8:30 AM – 10:30 PM</span></li>
+          <li><span>Saturday</span><span>8:30 AM – 4:30 PM</span></li>
+          <li><span>Sunday</span><span>2:30 PM – 10:30 PM</span></li>
+        </ul>
+      </div>
+
+      <!-- Need Assistance -->
+      <div class="wa-card">
+        <div class="wa-content">
+          <h4>Need Assistance?</h4>
+          <p>Chat with us on WhatsApp</p>
+          <div class="wa-number">016-7320560</div>
+        </div>
+        <button class="btn-wa-action">Chat Now <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== REVIEWS ==================== -->
+  <section class="reviews-section container">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <span class="script-font" style="font-size: 1.8rem;">What Our Patients Say ♡</span>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="review-text">"The doctor is very friendly and explain everything clearly. The clinic is clean and comfortable."</p>
+        <div class="reviewer">- Aisyah M.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="review-text">"Great service and short waiting time. My family's go-to clinic in Dengkil!"</p>
+        <div class="reviewer">- Farid H.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="review-text">"Very child-friendly clinic! My kids are not afraid to see the doctor anymore."</p>
+        <div class="reviewer">- Siti N.</div>
+      </div>
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=400&auto=format&fit=crop" alt="Happy Family" class="banner-family-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <h3>KLINIK CASAMEDIK</h3>
+          <p>"HEAL WITH US"</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#">→ Home</a></li>
+            <li><a href="#">→ About Us</a></li>
+            <li><a href="#">→ Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 style="visibility: hidden;">Quick Links 2</h5>
+          <ul>
+            <li><a href="#">→ Promotions</a></li>
+            <li><a href="#">→ Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact Us</h5>
+          <ul style="color: #d8b4fe;">
+            <li><i class="fa-solid fa-phone"></i> 03-8681 5008</li>
+            <li><i class="fa-brands fa-whatsapp"></i> 016-7320560</li>
+            <li><i class="fa-regular fa-envelope"></i> info@klinikcasamedik.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2024 Klinik Casamedik. All Rights Reserved.</div>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <div>
+          <span class="script-font" style="color: #e9d5ff; font-size: 1.2rem;">Heal with us ♡</span>
+          <span style="margin-left: 10px; color: #a855f7;">Privacy Policy | Terms & Conditions</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT VANILLA ==================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Kesan Interaktif apabila butang diklik
+      const buttons = document.querySelectorAll('button, .btn-primary, .btn-outline, .btn-directions');
+
+      buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          // Hanya elakkan tindakan lalai jika ia bukan pautan navigasi sebenar
+          if(button.tagName === 'BUTTON') {
+            e.preventDefault();
+            const btnText = button.innerText.trim();
+            alert(`Fungsi untuk "${btnText}" akan tersedia tidak lama lagi!`);
+          }
+        });
+      });
+
+      // Kesan Smooth Scroll untuk Menu Navigasi
+      const navLinks = document.querySelectorAll('.nav-links a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
