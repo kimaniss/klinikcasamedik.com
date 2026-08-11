@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -965,7 +965,6 @@
         <div class="hero-image-container">
           <div class="doctor-card-bg"></div>
           <div class="doctor-img-wrapper">
-            <!-- Dokter Dummy SVG Visual Placeholder -->
             <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop" alt="Doctor" class="doctor-img" style="border-radius: 20px;">
           </div>
           <div class="quote-badge">
@@ -1155,7 +1154,7 @@
           <h4>Clinic Location</h4>
         </div>
         <p class="address-text">
-          Park Place 1, 6-G, Jalan PP1/1, Cybersouth, 43800 Dengkil, Selangor
+          6-G, Jalan PP 1/1, Park Place Persiaran Cybersouth 1, 43800 Dengkil, Selangor.
         </p>
         <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=400&auto=format&fit=crop" alt="Map View" class="map-placeholder">
         <a href="#" class="btn-directions">Get Directions <i class="fa-solid fa-arrow-right"></i></a>
@@ -1168,11 +1167,7 @@
           <h4>Operating Hours</h4>
         </div>
         <ul class="hours-list">
-          <li><span>Monday</span><span>8:30 AM – 10:30 PM</span></li>
-          <li><span>Tuesday</span><span>8:30 AM – 10:30 PM</span></li>
-          <li><span>Wednesday</span><span>8:30 AM – 10:30 PM</span></li>
-          <li><span>Thursday</span><span>8:30 AM – 10:30 PM</span></li>
-          <li><span>Friday</span><span>8:30 AM – 10:30 PM</span></li>
+          <li><span>Monday – Friday</span><span>8:30 AM – 10:30 PM</span></li>
           <li><span>Saturday</span><span>8:30 AM – 4:30 PM</span></li>
           <li><span>Sunday</span><span>2:30 PM – 10:30 PM</span></li>
         </ul>
@@ -1183,7 +1178,7 @@
         <div class="wa-content">
           <h4>Need Assistance?</h4>
           <p>Chat with us on WhatsApp</p>
-          <div class="wa-number">016-7320560</div>
+          <div class="wa-number">016-7326060</div>
         </div>
         <button class="btn-wa-action">Chat Now <i class="fa-solid fa-arrow-right"></i></button>
       </div>
@@ -1250,8 +1245,8 @@
         <div class="footer-col">
           <h5>Contact Us</h5>
           <ul style="color: #d8b4fe;">
-            <li><i class="fa-solid fa-phone"></i> 03-8681 5008</li>
-            <li><i class="fa-brands fa-whatsapp"></i> 016-7320560</li>
+            <li><i class="fa-solid fa-phone"></i> 03-3851 5938</li>
+            <li><i class="fa-brands fa-whatsapp"></i> 016-7326060</li>
             <li><i class="fa-regular fa-envelope"></i> info@klinikcasamedik.com</li>
           </ul>
         </div>
@@ -1276,21 +1271,20 @@
   <!-- ==================== JAVASCRIPT VANILLA ==================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Kesan Interaktif apabila butang diklik
+      // Button Click Alert Event
       const buttons = document.querySelectorAll('button, .btn-primary, .btn-outline, .btn-directions');
 
       buttons.forEach(button => {
         button.addEventListener('click', (e) => {
-          // Hanya elakkan tindakan lalai jika ia bukan pautan navigasi sebenar
           if(button.tagName === 'BUTTON') {
             e.preventDefault();
             const btnText = button.innerText.trim();
-            alert(`Fungsi untuk "${btnText}" akan tersedia tidak lama lagi!`);
+            alert(`The function for "${btnText}" will be available soon!`);
           }
         });
       });
 
-      // Kesan Smooth Scroll untuk Menu Navigasi
+      // Navigation Links Active Toggle
       const navLinks = document.querySelectorAll('.nav-links a');
       navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
