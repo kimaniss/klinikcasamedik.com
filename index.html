@@ -1063,7 +1063,7 @@
       <div class="section-title">
         <span>Suasana Klinik</span>
         <h2>Fasiliti & Persekitaran Kami</h2>
-        <p>Gambar-gambar sekitar Klinik Casa Medik yang bersih, moden dan selesa untuk anda sekeluarga.</p>
+        <p>Gambar-gambar sekitar Klinik Casamedik yang bersih, moden dan selesa untuk anda sekeluarga.</p>
       </div>
 
       <div class="gallery-grid">
@@ -1229,8 +1229,8 @@
                 <li>Doctor Khir is very helpful and friendly</li>
                 <li>Really love the smell of the clinic</li>
                 <li>The medicine is always effective to me</li>
-                <li>Staff is kind</li>
-              </ol>"
+                <li>Staff is kind"</li>
+              </ol>
             </div>
           </div>
           <div class="review-author">
@@ -1376,6 +1376,7 @@
                 <option value="Weight Management">Weight Management</option>
                 <option value="Minor Procedures & Wound Care">Minor Procedures & Wound Care</option>
                 <option value="Joint Injection">Joint Injection</option>
+                <option value="Others">Others</option>
               </select>
             </div>
 
@@ -1508,7 +1509,7 @@
     function handleFormSubmit(e) {
       e.preventDefault();
 
-      const clinicWhatsAppNumber = "60167326060"; // Nombor WhatsApp Klinik Casa Medik
+      const clinicWhatsAppNumber = "60167326060"; // Nombor WhatsApp Klinik CasaMedik
 
       const name = document.getElementById('fullName').value.trim();
       const rawPhone = document.getElementById('phone').value.trim();
@@ -1520,7 +1521,7 @@
 
       document.getElementById('phone').value = formattedPatientPhone;
 
-      let message = `*TEMPAHAN TEMUJANJI - KLINIK CASA MEDIK*\n\n`;
+      let message = `*TEMPAHAN TEMUJANJI - KLINIK CASAMEDIK*\n\n`;
       message += `👤 *Nama:* ${name}\n`;
       message += `📞 *No. Telefon:* ${formattedPatientPhone}\n`;
       message += `🩺 *Perkhidmatan:* ${service}\n`;
